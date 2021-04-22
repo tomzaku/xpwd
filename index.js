@@ -8,9 +8,10 @@ const getShortPath = (path, userPath, lastShown = 3) => {
   return output
 }
 
-const userPath = `/Users/${execSync('whoami', { encoding: 'utf-8' })}`.split(`\n`)[0]
 exports.app = () => {
-  getShortPath(process.argv[2], userPath, 3)
+  const userPath = `/Users/${execSync('whoami', { encoding: 'utf-8' })}`.split(`\n`)[0]
+  const pwd = execSync('pwd', {encoding: 'utf-8'})
+  getShortPath(process.argv[2] || pwd, userPath, process.argv[3] || 3)
 }
 
 
