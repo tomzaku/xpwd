@@ -1,4 +1,4 @@
-#xpwd - output the short path working directory
+# xpwd - output the short path working directory
 
 Input:
 
